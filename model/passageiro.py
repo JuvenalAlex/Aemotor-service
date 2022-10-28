@@ -1,5 +1,3 @@
-from model.aluno import Aluno
-
 
 class Passageiro():
     
