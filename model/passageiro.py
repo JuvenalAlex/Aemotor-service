@@ -7,4 +7,4 @@ class Passageiro():
         self.cidadeDestino = cidadeDestino
 
     def __repr__(self):
-        return '<Aluno {} Cidade Origem {} Cidade Destino {} >'.format(self.aluno, self.cidadeOrigem, self.cidadeDestino)
+        return 'Aluno {}\nCidade Origem {} Cidade Destino {}\n '.format(self.aluno, self.cidadeOrigem, self.cidadeDestino)

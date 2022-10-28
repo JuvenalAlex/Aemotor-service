@@ -7,4 +7,4 @@ class Veiculo():
         self.placa = placa
 
     def __repr__(self):
-        return '<Cidade: {} Quantidade de passageiros: {} Tipo do veículo: {} Placa: {}>'.format(self.cidade, self.qtdPassageiros, self.tipoVeiculo, self.placa)
+        return 'Cidade: {} Quantidade de passageiros: {} Tipo do veículo: {} Placa: {}\n'.format(self.cidade, self.qtdPassageiros, self.tipoVeiculo, self.placa)

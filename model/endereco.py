@@ -7,4 +7,4 @@ class Endereco():
         self.logradouro = logradouro
 
     def __repr__(self):
-        return '<Cep: {} Numero: {} Complemento: {} Referencia: {} Logradouro: {}>'.format(self.cep, self.numero, self.complemento, self.referencia, self.logradouro)
+        return 'Cep: {}\n Numero: {}\n Complemento: {}\n Referencia: {}\n Logradouro: {}\n'.format(self.cep, self.numero, self.complemento, self.referencia, self.logradouro)

@@ -7,4 +7,4 @@ class Prefeito(Pessoa):
         self.pessoa = pessoa
 
     def __repr__(self):
-        return '<Prefeito:{} >'.format(self.pessoa)
+        return 'Prefeito:{}\n '.format(self.pessoa)

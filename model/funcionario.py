@@ -5,6 +5,6 @@ class Funcionario():
         self.cargo = cargo
 
     def __repr__(self):
-        return '<Prefeitura {} Cargo {}>'.format(self.prefeitura, self.cargo)
+        return '\nPrefeitura {}\n Cargo {}\n'.format(self.prefeitura, self.cargo)
 
     

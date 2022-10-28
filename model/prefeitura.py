@@ -7,4 +7,4 @@ class Prefeitura():
         self.nomePrefeito = nomePrefeito
 
     def __repr__(self):
-        return '<Secretarios: {} Email: {} Telefone: {} Nome do Prefeito: {}'.format(self.secretarios, self.email, self.telefone, self.nomePrefeito)
+        return 'Secretarios: {} Email: {} Telefone: {} Nome do Prefeito: {}\n'.format(self.secretarios, self.email, self.telefone, self.nomePrefeito)

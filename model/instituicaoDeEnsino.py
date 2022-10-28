@@ -6,4 +6,4 @@ class InstituicaoDeEnsino():
         self.telefone = telefone
 
     def __repr__(self):
-        return '<Nome: {} Logradouro: {} Telefone: {}>'.format(self.nome, self.logradouro, self.telefone)
+        return 'Nome: {} Logradouro: {} Telefone: {}\n'.format(self.nome, self.logradouro, self.telefone)

@@ -7,4 +7,4 @@ class Pessoa():
         self.telefone = telefone
 
     def __repr__(self):
-        return '<Nome: {} Data de Nascimento: {} Email: {} Telefone: {}>'.format(self.nome, self.nascimento, self.email, self.telefone)
+        return 'Nome: {} Data de Nascimento: {} Email: {} Telefone: {}\n'.format(self.nome, self.nascimento, self.email, self.telefone)

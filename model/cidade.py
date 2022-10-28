@@ -6,4 +6,4 @@ class Cidade():
     
     
     def __repr__(self):
-        return '<Nome: {} Sigla: {}>'.format(self.nome, self.sigla)
+        return 'Nome: {}\n Sigla: {}\n'.format(self.nome, self.sigla)

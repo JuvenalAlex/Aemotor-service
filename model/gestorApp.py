@@ -6,4 +6,4 @@ class GestorApp(Pessoa):
         self.pessoa = pessoa
 
     def __repr__(self):
-        return '<GestorApp {}>'.format(self.pessoa)
+        return 'GestorApp {}\n'.format(self.pessoa)

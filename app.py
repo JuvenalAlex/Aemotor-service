@@ -18,7 +18,7 @@ from model.veiculo import Veiculo
 pessoa = Pessoa("Juvenal", "28/11/2002", "email@juvenal", "93455-5452")
 print(pessoa)
 
-aluno = Aluno("Deris", "25/11/2001", "Deris@email", "934345-3321", "IFPB", "TSI", "2020201232")
+aluno = Aluno("Deris", "17/11/2001", "Deris@email", "934345-3321", "IFPB", "TSI", "2020201232")
 print(aluno)
 
 cidade = Cidade("Guarabira", "GBA")
@@ -36,19 +36,22 @@ print(funcionario)
 veiculo = Veiculo("Guarabira", "44", "Ônibus", "GOS-7329")
 print(veiculo)
 
-gestor = GestorApp("Rhavy", "12/02/1989", "Rhavy@email", "98322-5541")
+
+gestor = GestorApp(pessoa)
 print(gestor)
 
 instituto = InstituicaoDeEnsino("IFPB", "Rua Professor Carlos Leonardo Arcoverde", "98195-6465")
 print(instituto)
 
-motorista = Motorista("A ser determinado", "Sapé", "Motorista de ônibus")
+motorista = Motorista("A ser determinado",funcionario)
 print(motorista)
+
 
 passageiro = Passageiro(aluno, "Sapé", "Guarabira")
 print(passageiro)
 
-prefeito = Prefeito("Sidney", "15/06/1970", "Sidney@mail", "95464-9875")
+pessoa2 = Pessoa("Sidney","22/12/2002","sidney@email","92234-2343")
+prefeito = Prefeito(pessoa2)
 print (prefeito)
 
 rota = Rota("Guarabira", "44", "Sapé", "ônibus", "Jean", "06:00h", "07:00h")

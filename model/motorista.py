@@ -8,4 +8,4 @@ class Motorista(Funcionario):
         self.rotas = rotas
 
     def __repr__(self):
-        return '<Rotas {} >'.format(self.rotas, self.funcionario)
+        return 'Rotas {}\n '.format(self.rotas, self.funcionario)
