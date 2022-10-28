@@ -1,5 +1,12 @@
-class Prefeitura():
+from helpers.database import db
+class Prefeitura(db.Model):
+    __tablename__ = "tb_prefeitura"
 
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    secretarios=db.Column(db.String(120), nullable=False)
+    telefone=db.Column(db.String(120), nullable=False)
+    
     def __init__(self, secretarios, email, telefone, nomePrefeito):
         self.secretarios = secretarios
         self.email = email
