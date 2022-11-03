@@ -8,7 +8,6 @@ class Motorista(Funcionario,db.Model):
     rotas = db.Column(db.String(80), nullable=False)
     funcionario_id = db.Column(db.Integer, db.ForeignKey("tb_funcionario.id"))
     
-    funcionario = db.relationship("Funcionario")
     veiculo_child = db.Relationship('Veiculo',uselist=False)
     
     def __init__(self, rotas,funcionario):

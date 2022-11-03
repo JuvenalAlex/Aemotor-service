@@ -11,8 +11,9 @@ class Aluno(Pessoa,db.Model):
     matricula = db.Column(db.String(20), nullable=False)
     
     pessoa_id = db.Column(db.Integer, db.ForeignKey("tb_pessoa.id"))
-    pessoa = db.relationship("Pessoa")
     
+    instituicao_child = db.relationship("InstituicaoDeEnsino", uselist=False)
+    rotas = db.relationship('Alunos')
     passageiro_child = db.relationship('Passageiro',uselist=False)
     
 

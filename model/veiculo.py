@@ -9,7 +9,7 @@ class Veiculo(db.Model):
     placa = db.Column(db.String(20), nullable=False)
     motorista_id = db.Column(db.Integer, db.ForeignKey("tb_motorista.id"))
     
-    motorista = db.Relationship('Motorista')
+    
     def __init__(self, cidade, qtdPassageiros, tipoVeiculo, placa,motorista):
         self.cidade = cidade
         self.qtdPassageiros = qtdPassageiros

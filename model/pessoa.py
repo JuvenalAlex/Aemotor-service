@@ -9,11 +9,12 @@ class Pessoa(db.Model):
     telefone = db.Column(db.String(11), nullable=False)
     endereco_id = db.Column(db.Integer, db.ForeignKey('tb_endereco.id'))
     
-    child = db.relationship("Aluno", uselist=False)
-    child2 = db.relationship("Prefeito", uselist=False)
-    child3 = db.relationship("Funcionario", uselist=False)
+    childaluno_ = db.relationship("Aluno", uselist=False)
+    childprefeito_ = db.relationship("Prefeito", uselist=False)
+    childfuncionario_ = db.relationship("Funcionario", uselist=False)
+    childendereco_ = db.relationship("Endereco", uselist=False)
+    childgestor_ = db.relationship("GestorApp", uselist=False)
     
-    endereco = db.relationship("Endereco")
     
     def __init__(self, nome, nascimento, email, telefone,endereco):
         self.nome = nome
