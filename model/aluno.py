@@ -13,7 +13,7 @@ class Aluno(Pessoa,db.Model):
     pessoa_id = db.Column(db.Integer, db.ForeignKey("tb_pessoa.id"))
     
     instituicao_child = db.relationship("InstituicaoDeEnsino", uselist=False)
-    rotas = db.relationship('Alunos')
+    rotas = db.relationship('Rotas')
     passageiro_child = db.relationship('Passageiro',uselist=False)
     
 
