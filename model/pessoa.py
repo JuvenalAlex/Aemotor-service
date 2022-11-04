@@ -13,7 +13,7 @@ class Pessoa(db.Model):
     email = db.Column(db.String, unique=True)
     telefone = db.Column(db.String(11))
 
-    endereco = db.relationship("Endereco", uselist=False)
+   
     aluno_child = db.relationship("Aluno", uselist=False)
     prefeito_child = db.relationship("Prefeito", uselist=False)
     endereco_child = db.relationship("Endereco", uselist=False)
