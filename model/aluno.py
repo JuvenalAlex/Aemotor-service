@@ -1,7 +1,7 @@
-from model.pessoa import Pessoa
+from model.pessoa import Pessoa_db
 from helpers.database import db
 
-class Aluno(Pessoa,db.Model):
+class Aluno_db(Pessoa_db,db.Model):
     
     __tablename__ = 'tb_aluno'
     __mapper_args__ = {'polymorphic_identity': 'aluno', 'concrete': True}
@@ -13,9 +13,9 @@ class Aluno(Pessoa,db.Model):
     
     pessoa_id = db.Column(db.Integer, db.ForeignKey("tb_pessoa.id"))
     
-    instituicao_child = db.relationship("InstituicaoDeEnsino", uselist=False)
-    rotas = db.relationship('Aluno', backref='Aluno', lazy=True)
-    passageiro_child = db.relationship('Passageiro',uselist=False)
+    instituicao_child = db.relationship("InstituicaoDeEnsino_db", uselist=False)
+    rotas = db.relationship('Rota_db', backref='Rota_db', lazy=True)
+    passageiro_child = db.relationship('Passageiro_db',uselist=False)
     
 
     def __init__(self, nome, nascimento, email, telefone, instituicaoDeEnsino, curso, matricula,pessoa):

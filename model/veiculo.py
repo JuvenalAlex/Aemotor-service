@@ -1,5 +1,5 @@
 from helpers.database import db
-class Veiculo(db.Model):
+class Veiculo_db(db.Model):
     __tablename__ = 'tb_veiculo'
 
     id = db.Column(db.Integer, primary_key=True)

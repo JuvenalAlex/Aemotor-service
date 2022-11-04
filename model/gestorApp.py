@@ -1,6 +1,6 @@
-from model.pessoa import Pessoa
+from model.pessoa import Pessoa_db
 from helpers.database import db
-class GestorApp(Pessoa,db.Model):
+class GestorApp_db(Pessoa_db,db.Model):
     
     __tablename__ = 'tb_gestorApp'
     __mapper_args__ = {'polymorphic_identity': 'gestor', 'concrete': True}

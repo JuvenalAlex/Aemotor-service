@@ -1,6 +1,6 @@
 from helpers.database import db
 
-class Rota(db.Model):
+class Rota_db(db.Model):
     
     __tablename__ = 'tb_Rota'
 
@@ -13,8 +13,8 @@ class Rota(db.Model):
     horaSaida = db.Column(db.String(80), nullable=False)
     horaChegada = db.Column(db.String(80), nullable=False)
     
-    prefeitura_child = db.relationship("Prefeitura", uselist=False)
-    instituicoes = db.relationship('InstituicaoDeEnsino', backref='InstituicaoDeEnsino', lazy=True)
+    prefeitura_child = db.relationship("Prefeitura_db", uselist=False)
+    instituicoes = db.relationship('InstituicaoDeEnsino_db', backref='InstituicaoDeEnsino_db', lazy=True)
     aluno_id = db.Column(db.Integer, db.ForeignKey('tb_aluno.id_aluno'), nullable=False)
   
     def __init__(self, nomeDestino, qtdalunos, prefeitura, veiculo, passageiro, horaSaida, horaChegada):

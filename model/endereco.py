@@ -1,5 +1,5 @@
 from helpers.database import db
-class Endereco(db.Model):
+class Endereco_db(db.Model):
     
     __tablename__ = "tb_endereco"
     id = db.Column(db.Integer, primary_key=True)
@@ -10,7 +10,7 @@ class Endereco(db.Model):
     
     pessoa_id = db.Column(db.Integer, db.ForeignKey("tb_pessoa.id"))
     instituicaoDeEnsino_parent = db.Column(db.Integer, db.ForeignKey("tb_InstituicaoDeEnsino.id"))
-    pessoa = db.relationship("Pessoa")
+    pessoa = db.relationship("Pessoa_db")
     
     def __init__(self, cep, numero, complemento, referencia, logradouro):
         self.cep = cep
