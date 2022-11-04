@@ -8,6 +8,7 @@ class Prefeito(Pessoa,db.Model):
     
     id_prefeito = db.Column(db.Integer, primary_key=True)
     nomePrefeito = db.Column(db.String(80), nullable=False)
+    
     pessoa_id = db.Column(db.Integer, db.ForeignKey("tb_pessoa.id"))
     prefeitura_id = db.Column(db.Integer, db.ForeignKey("tb_prefeitura.id"))
     

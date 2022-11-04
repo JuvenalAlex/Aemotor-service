@@ -10,7 +10,7 @@ class Funcionario(db.Model):
     cargo = db.Column(db.String(30), nullable=False)
     pessoa_id = db.Column(db.Integer, db.ForeignKey("tb_pessoa.id"))
     
-  
+    prefeitura_id = db.Column(db.Integer, db.ForeignKey('tb_prefeitura.id'), nullable=False)
     
     motorista = db.relationship("Motorista", uselist=False)
     pessoa = db.relationship("Pessoa",foreign_keys=[pessoa_id])

@@ -7,7 +7,7 @@ class Cidade(db.Model):
     sigla = db.Column(db.String(6), nullable=False)
 
     prefeitura_child = db.relationship("Prefeitura", uselist=False)
-    uf_child = db.relationship("Uf", uselist=False)
+    uf_child = db.relationship("Uf",backref='uf', lazy=True, uselist=False)
     
     def __init__(self, nome, sigla):
         self.nome = nome

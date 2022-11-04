@@ -14,10 +14,9 @@ from model.pessoa import Pessoa
 from model.prefeito import Prefeito
 from model.prefeitura import Prefeitura
 from model.rota import Rota
+from model.cidade import Cidade
 from model.uf import Uf
 from model.veiculo import Veiculo
-
-
 
 
 from helpers.database import db, migrate

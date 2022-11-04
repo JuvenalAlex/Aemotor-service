@@ -10,7 +10,9 @@ class InstituicaoDeEnsino(db.Model):
     aluno_id = db.Column(db.Integer, db.ForeignKey("tb_aluno.id_aluno"))
     rota_id = db.Column(db.Integer, db.ForeignKey('tb_Rota.id'), nullable=False)
     
-    
+    endereco_child = db.relationship("Endereco", uselist=False)
+    aluno_id = db.Column(db.Integer, db.ForeignKey("tb_aluno.id_aluno"))
+    rota_id = db.Column(db.Integer, db.ForeignKey('tb_Rota.id'), nullable=False)
    
     def __init__(self, nome, logradouro, telefone):
         self.nome = nome

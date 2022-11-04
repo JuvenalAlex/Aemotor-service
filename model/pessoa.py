@@ -14,6 +14,11 @@ class Pessoa(db.Model):
     telefone = db.Column(db.String(11))
 
     endereco = db.relationship("Endereco", uselist=False)
+    aluno_child = db.relationship("Aluno", uselist=False)
+    prefeito_child = db.relationship("Prefeito", uselist=False)
+    endereco_child = db.relationship("Endereco", uselist=False)
+    funcionario_child = db.relationship("Funcionario", uselist=False)
+    gestor_child = db.relationship("GestorApp", uselist=False)
 
     # Herança: Superclasse
     tipo_pessoa = db.Column('tipo_pessoa', String(50))
