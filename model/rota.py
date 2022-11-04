@@ -12,11 +12,11 @@ class Rota_db(db.Model):
     passageiro = db.Column(db.String(11), nullable=False)
     horaSaida = db.Column(db.String(80), nullable=False)
     horaChegada = db.Column(db.String(80), nullable=False)
-    
-    prefeitura_child = db.relationship("Prefeitura_db", uselist=False)
-    instituicoes = db.relationship('InstituicaoDeEnsino_db', backref='InstituicaoDeEnsino_db', lazy=True)
     aluno_id = db.Column(db.Integer, db.ForeignKey('tb_aluno.id_aluno'), nullable=False)
   
+    prefeitura_child = db.relationship("Prefeitura_db", uselist=False)
+    instituicoes = db.relationship('InstituicaoDeEnsino_db', backref='InstituicaoDeEnsino_db', lazy=True)
+   
     def __init__(self, nomeDestino, qtdalunos, prefeitura, veiculo, passageiro, horaSaida, horaChegada):
         self.nomeDestino = nomeDestino
         self.qtdalunos = qtdalunos
