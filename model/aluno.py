@@ -4,8 +4,9 @@ from helpers.database import db
 class Aluno(Pessoa,db.Model):
     
     __tablename__ = 'tb_aluno'
+    __mapper_args__ = {'polymorphic_identity': 'aluno', 'concrete': True}
 
-    id = db.Column(db.Integer, primary_key=True)
+    id_aluno = db.Column(db.Integer, primary_key=True)
     instituicaoDeEnsino = db.Column(db.String(80), nullable=False)
     curso = db.Column(db.String(50), nullable=False)
     matricula = db.Column(db.String(20), nullable=False)
@@ -13,7 +14,7 @@ class Aluno(Pessoa,db.Model):
     pessoa_id = db.Column(db.Integer, db.ForeignKey("tb_pessoa.id"))
     
     instituicao_child = db.relationship("InstituicaoDeEnsino", uselist=False)
-    rotas = db.relationship('Rotas')
+
     passageiro_child = db.relationship('Passageiro',uselist=False)
     
 

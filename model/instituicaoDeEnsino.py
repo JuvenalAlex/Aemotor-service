@@ -7,10 +7,10 @@ class InstituicaoDeEnsino(db.Model):
     nome = db.Column(db.String(30), nullable=False)
     telefone = db.Column(db.String(11), nullable=False)
     logradouro = db.Column(db.String(80), nullable=False)
-    aluno_id = db.Column(db.Integer, db.ForeignKey("tb_aluno.id"))
-    rota_id = db.Column(db.Integer, db.ForeignKey('InstituicaoDeEnsino.id'), nullable=False)
+    aluno_id = db.Column(db.Integer, db.ForeignKey("tb_aluno.id_aluno"))
+    rota_id = db.Column(db.Integer, db.ForeignKey('tb_Rota.id'), nullable=False)
     
-    endereco_child = db.relationship("Endereco", uselist=False)
+    
    
     def __init__(self, nome, logradouro, telefone):
         self.nome = nome

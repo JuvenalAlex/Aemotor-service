@@ -1,16 +1,19 @@
 from helpers.database import db
-from model.motorista import Motorista
+
+
 class Funcionario(db.Model):
     __tablename__ = "tb_funcionario"
+    __mapper_args__ = {'polymorphic_identity': 'funcionario', 'concrete': True}
     
-    id = db.Column(db.Integer, primary_key=True)
+    id_fun = db.Column(db.Integer, primary_key=True)
     prefeitura = db.Column(db.String(90), nullable=False)
     cargo = db.Column(db.String(30), nullable=False)
     pessoa_id = db.Column(db.Integer, db.ForeignKey("tb_pessoa.id"))
-    prefeitura_id = db.Column(db.Integer, db.ForeignKey('Funcionario.id'), nullable=False)
-   
+    
+  
+    
     motorista = db.relationship("Motorista", uselist=False)
-    pessoa = db.relationship("Pessoa")
+    pessoa = db.relationship("Pessoa",foreign_keys=[pessoa_id])
     
     def __init__(self, prefeitura, cargo, pessoa):
         self.prefeitura = prefeitura

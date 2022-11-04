@@ -7,12 +7,10 @@ class Prefeitura(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     secretarios=db.Column(db.String(120), nullable=False)
     telefone=db.Column(db.String(120), nullable=False)
-    cidade_id = db.Column(db.Integer, db.ForeignKey("tb_cidade.id"))
-    rota_id = db.Column(db.Integer, db.ForeignKey("tb_rota.id"))
+    rota_id = db.Column(db.Integer, db.ForeignKey("tb_Rota.id"))
     
     prefeito_child = db.relationship("Prefeito", uselist=False)
-    gestor = db.relationship('GestorApp', backref='GestorApp')
-    funcionario = db.relationship('Funcionario', backref='Funcionario')
+   
     
     def __init__(self, secretarios, email, telefone, nomePrefeito):
         self.secretarios = secretarios

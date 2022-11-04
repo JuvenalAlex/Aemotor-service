@@ -4,9 +4,10 @@ from helpers.database import db
 class Prefeito(Pessoa,db.Model):
     
     __tablename__ = 'tb_prefeito'
-
-    id = db.Column(db.Integer, primary_key=True)
-    nome = db.Column(db.String(80), nullable=False)
+    __mapper_args__ = {'polymorphic_identity': 'prefeito', 'concrete': True}
+    
+    id_prefeito = db.Column(db.Integer, primary_key=True)
+    nomePrefeito = db.Column(db.String(80), nullable=False)
     pessoa_id = db.Column(db.Integer, db.ForeignKey("tb_pessoa.id"))
     prefeitura_id = db.Column(db.Integer, db.ForeignKey("tb_prefeitura.id"))
     

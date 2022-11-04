@@ -1,6 +1,10 @@
-from model.aluno import Aluno
-from model.cidade import Cidade
+from flask import Flask
+from flask_restful import Api
+from flask_cors import CORS
+
 from model.endereco import Endereco
+from model.pessoa import Pessoa
+from model.aluno import Aluno
 from model.funcionario import Funcionario
 from model.gestorApp import GestorApp
 from model.instituicaoDeEnsino import InstituicaoDeEnsino
@@ -15,47 +19,63 @@ from model.veiculo import Veiculo
 
 
 
-pessoa = Pessoa("Juvenal", "28/11/2002", "email@juvenal", "93455-5452")
-print(pessoa)
 
-aluno = Aluno("Deris", "17/11/2001", "Deris@email", "934345-3321", "IFPB", "TSI", "2020201232")
-print(aluno)
+from helpers.database import db, migrate
 
-cidade = Cidade("Guarabira", "GBA")
-print(cidade)
+# CORS
+app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
-endereco = Endereco("58340-000", "177", "Casa", "Próximo ao Afonso Júnior", "Rua Juscelino Kubistchek")
-print(endereco)
+# SQLAlchemy
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://dspace:dspace@localhost:5432/dspace'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-prefeitura = Prefeitura("Marcelo", "email@Marcelo", "1587-5152", "Marcelo")
-print(prefeitura)
-
-funcionario = Funcionario(prefeitura, "Menino da Informática")
-print(funcionario)
-
-veiculo = Veiculo("Guarabira", "44", "Ônibus", "GOS-7329")
-print(veiculo)
+db.init_app(app)
+migrate.init_app(app, db)
 
 
-gestor = GestorApp(pessoa)
-print(gestor)
 
-instituto = InstituicaoDeEnsino("IFPB", "Rua Professor Carlos Leonardo Arcoverde", "98195-6465")
-print(instituto)
+# pessoa = Pessoa("Juvenal", "28/11/2002", "email@juvenal", "93455-5452")
+# print(pessoa)
 
-motorista = Motorista("A ser determinado",funcionario)
-print(motorista)
+# aluno = Aluno("Deris", "17/11/2001", "Deris@email", "934345-3321", "IFPB", "TSI", "2020201232",'Pessoa')
+# print(aluno)
+
+# cidade = Cidade("Guarabira", "GBA")
+# print(cidade)
+
+# endereco = Endereco("58340-000", "177", "Casa", "Próximo ao Afonso Júnior", "Rua Juscelino Kubistchek")
+# print(endereco)
+
+# prefeitura = Prefeitura("Marcelo", "email@Marcelo", "1587-5152", "Marcelo")
+# print(prefeitura)
+
+# funcionario = Funcionario(prefeitura, "Menino da Informática",'Pessoa')
+# print(funcionario)
+
+# veiculo = Veiculo("Guarabira", "44", "Ônibus", "GOS-7329",'Pessoa')
+# print(veiculo)
 
 
-passageiro = Passageiro(aluno, "Sapé", "Guarabira")
-print(passageiro)
+# gestor = GestorApp(pessoa)
+# print(gestor)
 
-pessoa2 = Pessoa("Sidney","22/12/2002","sidney@email","92234-2343")
-prefeito = Prefeito(pessoa2)
-print (prefeito)
+# instituto = InstituicaoDeEnsino("IFPB", "Rua Professor Carlos Leonardo Arcoverde", "98195-6465")
+# print(instituto)
 
-rota = Rota("Guarabira", "44", "Sapé", "ônibus", "Jean", "06:00h", "07:00h")
-print(rota)
+# motorista = Motorista("A ser determinado",funcionario)
+# print(motorista)
 
-uf = Uf("Paraíba", "PB")
-print(uf)
+
+# passageiro = Passageiro(aluno, "Sapé", "Guarabira")
+# print(passageiro)
+
+# pessoa2 = Pessoa("Sidney","22/12/2002","sidney@email","92234-2343")
+# prefeito = Prefeito(pessoa2)
+# print (prefeito)
+
+# rota = Rota("Guarabira", "44", "Sapé", "ônibus", "Jean", "06:00h", "07:00h")
+# print(rota)
+
+# uf = Uf("Paraíba", "PB")
+# print(uf)
