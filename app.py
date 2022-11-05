@@ -2,6 +2,8 @@ from flask import Flask
 from flask_restful import Api
 from flask_cors import CORS
 
+#Model
+
 from model.endereco import Endereco_db
 from model.pessoa import Pessoa_db
 from model.aluno import Aluno_db
@@ -17,6 +19,8 @@ from model.rota import Rota_db
 from model.cidade import Cidade_db
 from model.uf import Uf_db
 from model.veiculo import Veiculo_db
+
+#Resources
 
 from resources.cidade import Cidade
 from resources.funcionario import Funcionario
